@@ -44,8 +44,18 @@ v2.0.0
 - Rewrite whole script module to binary module
 
 # Install module from the PowerShell Gallery
+If your machine doesn't natively use TLS 1.2, run this first:
+```PowerShell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
+Install module:
 ```PowerShell
 Install-Module PSWindowsUpdate
+```
+or 
+```PowerShell
+Install-PSResource PSWindowsUpdate
 ```
 
 # Usage and Examples
